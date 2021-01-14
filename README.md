@@ -41,33 +41,38 @@ following options (the 3rd argument of `generate()`):
 - `generateParseResult`
 
   If set then a `namespace.vars` array will be written with the output from
-  the parse result (the output of the `parse()` function from the [glsl_variables](https://deno.land/x/glsl_variables])). **Default: true**
+  the parse result (the output of the `parse()` function from the [glsl_variables](https://deno.land/x/glsl_variables])).
+  **Default: true**
 
 - `generateGLSLTypes`
 
   If set then the output will contain the type declarations for the GLSL base
   types. All interfaces depend on these and they are used extensively in the
   output string of `generate()`. Please make sure to produce them _once_ and once
-  **only** throughout your shader generation. **Default: true**
+  **only** throughout your shader generation.
+  **Default: true**
 
 - `interfaceName`
 
   The final exported interface name. This is an empty interface that extends
   both the input variables interface and the output variables interface. It
   contains all I/O variables found on the shader and is intended to be the main
-  thing to be imported from the produced declarations. **Default: "Variables"**
+  thing to be imported from the produced declarations.
+  **Default: "Variables"**
 
 - `inputsInterfaceName`
 
   The interface name to be used for all input variable declarations. This
   interface is then extended by `interfaceName` to include also the output
-  variables interface. **Default: "Inputs"**
+  variables interface.
+  **Default: "Inputs"**
 
 - `outputsInterfaceName`
 
   The interface name to be used for all output variable declarations. This
   interface is then extended by `interfaceName` to include also the input
-  variables interface. **Default: "Outputs"**
+  variables interface.
+  **Default: "Outputs"**
 
 ### Usage
 
