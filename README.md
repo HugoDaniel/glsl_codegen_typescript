@@ -85,7 +85,7 @@ Either way, a common usage can be said to be something along these lines:
 ```typescript
 import { generate } from "./api.ts";
 
-const fragmentShader = `
+const shader = `
     #version 300 es
 
     precision highp float;
