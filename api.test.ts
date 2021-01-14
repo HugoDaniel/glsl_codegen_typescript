@@ -17,7 +17,8 @@ Deno.test(
       `;
     const t = generate(
       shader,
-      { namespace: "MyShader", generateGLSLTypes: false },
+      "MyShader",
+      { generateGLSLTypes: false },
     );
     assert(t.includes("interface Material"), "Interface missing");
     assert(t.includes("ambient: vec3;"), "Attribute missing");
@@ -45,7 +46,8 @@ Deno.test(
     }`;
     const t = generate(
       shader,
-      { namespace: "MyShader", generateGLSLTypes: false },
+      "MyShader",
+      { generateGLSLTypes: false },
     );
     assert(t.includes("namespace MyShader"), "Namespace missing");
     assert(t.includes("export interface Inputs"), "Inputs Interface missing");
@@ -55,7 +57,7 @@ Deno.test(
     assert(t.includes("outColor: vec4;"), "Attribute missing");
     assert(
       t.includes(
-        "export interface IVariables extends Inputs,Outputs {}",
+        "export interface Variables extends Inputs,Outputs {}",
       ),
       "Final interface missing",
     );
@@ -73,7 +75,8 @@ Deno.test(
     } some_local_name;`;
     const t = generate(
       shader,
-      { namespace: "MyShader", generateGLSLTypes: false },
+      "MyShader",
+      { generateGLSLTypes: false },
     );
     assert(t.includes("interface Inputs"), "Interface missing");
     assert(
@@ -97,7 +100,8 @@ Deno.test(
     `;
     const t = generate(
       shader,
-      { namespace: "MyShader", generateGLSLTypes: false },
+      "MyShader",
+      { generateGLSLTypes: false },
     );
     assert(t.includes("interface Inputs"), "Interface missing");
     assert(t.includes("a_position: vec4[];"), "Attribute missing");
@@ -117,7 +121,8 @@ Deno.test(
     `;
     const t = generate(
       shader,
-      { namespace: "MyShader", generateGLSLTypes: false },
+      "MyShader",
+      { generateGLSLTypes: false },
     );
     assert(t.includes("interface Inputs"), "Interface missing");
     assert(
@@ -166,7 +171,8 @@ Deno.test(
             `;
     const t = generate(
       shader,
-      { namespace: "MyShader", generateGLSLTypes: false },
+      "MyShader",
+      { generateGLSLTypes: false },
     );
     assert(t.includes("interface Inputs"), "Interface missing");
     assert(
@@ -195,7 +201,8 @@ Deno.test(
       `;
     const t = generate(
       shader,
-      { namespace: "MyShader", generateGLSLTypes: false },
+      "MyShader",
+      { generateGLSLTypes: false },
     );
     assert(
       t.includes("export const vars = [{"),
@@ -217,7 +224,8 @@ Deno.test(
       `;
     const t = generate(
       shader,
-      { namespace: "MyShader", generateGLSLTypes: true },
+      "MyShader",
+      { generateGLSLTypes: true },
     );
     assert(t.includes("type vec2 = [number, number];"));
     assert(t.includes("type vec3 = [number, number, number];"));
